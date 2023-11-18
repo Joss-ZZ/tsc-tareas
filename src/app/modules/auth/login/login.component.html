@@ -1,0 +1,29 @@
+<div class="flex with-background">
+    <div class="card bg-light p-4 shadow border-rounded w-sm-50 w-lg-33 position-relative">
+
+        <div class="position-absolute translate-middle-x" style="top: -1rem; left: 4.5rem;">
+            <span class="badge fs-4 bg-dark rounded-3 text-white">LOGIN</span>
+        </div>
+        
+        <form [formGroup]="form" class="mt-4">
+            <div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="user" class="form-label fw-bold mb-2">Usuario</label>
+                        <input id="user" type="text" formControlName="user" placeholder="Usuario" class="form-control mb-3">
+            
+                        <label for="password" class="form-label fw-bold mb-2">Contraseña</label>
+                        <input id="password" type="password" formControlName="password" placeholder="Contraseña" class="form-control mb-3">
+                    </div>
+                    <div class="col-md-4 d-flex flex-column align-items-center">
+                        <div class="mb-3">
+                            <img src="assets/images/logo.png" alt="Logo" style="max-width: 100px;">
+                        </div>
+                        <button type="button" class="btn btn-danger" (click)="login()">Ingresar</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

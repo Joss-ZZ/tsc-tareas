@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark shadow-sm bg-dark">
+  <div class="container-fluid d-flex align-items-center">
+    <a class="navbar-brand d-flex">
+      <img src="assets/images/logo.png" alt="" width="50" height="50" class="d-inline-block align-text-top me-2">
+      <div class="d-flex align-items-center">
+        <span class="navbar-brand mb-0 h1">Prueba técnica - Angular</span>
+      </div>
+    </a>
+    <div>
+      <fa-icon [icon]="faCircle" class="text-success me-2"></fa-icon>
+      <span class="text-white">{{($user | async)?.user}}</span>
+    </div>
+  </div>
+</nav>

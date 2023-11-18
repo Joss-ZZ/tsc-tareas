@@ -1,0 +1,54 @@
+<app-menu></app-menu>
+<div class="container mt-4">
+  <div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-12">
+          <h5 class="card-title">LISTA DE TAREAS</h5>
+        </div>
+      </div>
+      <form [formGroup]="form" (submit)="agregarTarea($event)">
+        <div class="row mb-4">
+          <div class="col-lg-5 col-sm-9">
+            <input
+              id="user"
+              type="text"
+              formControlName="tarea"
+              placeholder="Ingrese una tarea"
+              class="form-control mb-3"
+            />
+          </div>
+          <div class="col-lg-1 col-sm-3">
+            <button type="submit" class="btn btn-danger">
+              Agregar
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <div class="form-check mb-4 d-flex" *ngFor="let tarea of listaTareas">
+            <div>
+              <input
+                class="form-check-input cursor-pointer"
+                type="checkbox"
+                [checked]="tarea.completed"
+                [id]="'tarea' + tarea.id"
+                (change)="toggle(tarea)"
+              />
+              <label
+                class="form-check-label cursor-pointer"
+                [for]="'tarea' + tarea.id"
+              >
+                {{ tarea.name }}
+              </label>
+            </div>
+            <button class="btn btn-danger ms-auto" *ngIf="!tarea.completed" (click)="eliminarTarea(tarea)">
+              <fa-icon [icon]="faXmark"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

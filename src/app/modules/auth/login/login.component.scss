@@ -1,0 +1,14 @@
+.flex{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 80px 0 50px 0;
+}
+
+.with-background {
+    background-image: url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}

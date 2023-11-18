@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+$utilities: (
+  "width": (
+    property: width,
+    class: w,
+    responsive: true,
+    values: (
+      25: 25%,
+      33: 33%,
+      50: 50%,
+      66: 66%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+    ),
+  ),
+  "cursor": (
+    property: cursor,
+    class: cursor,
+    values:
+      (
+        pointer: pointer,
+        grab: grab,
+      ),
+  ),
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
