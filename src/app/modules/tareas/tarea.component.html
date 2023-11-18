@@ -19,31 +19,35 @@
             />
           </div>
           <div class="col-lg-1 col-sm-3">
-            <button type="submit" class="btn btn-danger">
-              Agregar
-            </button>
+            <button type="submit" class="btn btn-danger">Agregar</button>
           </div>
         </div>
       </form>
       <div class="row">
         <div class="col-lg-6 col-sm-12">
-          <div class="form-check mb-4 d-flex" *ngFor="let tarea of listaTareas">
-            <div>
-              <input
-                class="form-check-input cursor-pointer"
-                type="checkbox"
-                [checked]="tarea.completed"
-                [id]="'tarea' + tarea.id"
-                (change)="toggle(tarea)"
-              />
-              <label
-                class="form-check-label cursor-pointer"
-                [for]="'tarea' + tarea.id"
-              >
-                {{ tarea.name }}
-              </label>
-            </div>
-            <button class="btn btn-danger ms-auto" *ngIf="!tarea.completed" (click)="eliminarTarea(tarea)">
+          <div
+            class="form-check mb-4 d-flex align-items-center border-bottom pb-3"
+            *ngFor="let tarea of listaTareas"
+          >
+            <input
+              class="form-check-input mt-0 cursor-pointer me-2"
+              type="checkbox"
+              [checked]="tarea.completed"
+              [id]="'tarea' + tarea.id"
+              (change)="toggle(tarea)"
+            />
+            <label
+              class="form-check-label cursor-pointer"
+              [for]="'tarea' + tarea.id"
+            >
+              {{ tarea.name }}
+            </label>
+
+            <button
+              class="btn btn-danger ms-auto"
+              *ngIf="!tarea.completed"
+              (click)="eliminarTarea(tarea)"
+            >
               <fa-icon [icon]="faXmark"></fa-icon>
             </button>
           </div>
